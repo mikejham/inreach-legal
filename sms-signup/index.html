@@ -3,41 +3,44 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>SMS signup — inReach Field Assistant</title>
+  <title>SMS signup — Michael Hamilton</title>
   <style>
     body { font-family: system-ui, sans-serif; max-width: 40rem; margin: 3rem auto; padding: 0 1.25rem; line-height: 1.55; color: #1a1a1a; }
     h1 { font-size: 1.6rem; }
-    label, .check { display: block; margin: 1rem 0; }
-    input[type="tel"] { width: 100%; max-width: 20rem; padding: 0.5rem; font-size: 1rem; }
+    label { display: block; margin: 1rem 0; }
+    input[type="tel"] { width: 100%; max-width: 22rem; padding: 0.5rem; font-size: 1rem; }
     input[type="checkbox"] { margin-right: 0.45rem; vertical-align: top; }
     button { background: #0b57d0; color: #fff; border: 0; padding: 0.65rem 1.1rem; font-size: 1rem; border-radius: 6px; cursor: pointer; }
     a { color: #0b57d0; }
     .fine { color: #333; font-size: 0.95rem; }
+    .box { border: 1px solid #bbb; padding: 1rem; border-radius: 8px; background: #fafafa; }
   </style>
 </head>
 <body>
-  <h1>Sign up for inReach Field Assistant SMS</h1>
-  <p>inReach Field Assistant sends recurring informational SMS replies about outdoor conditions (weather, trails, water, fire restrictions, road closures, and town hours). This is not marketing.</p>
+  <h1>Sign up for SMS from Michael Hamilton</h1>
+  <p>Michael Hamilton sends recurring informational text messages about outdoor conditions (weather, trail conditions, water sources, fire restrictions, road closures, and town hours). This is not marketing.</p>
 
-  <form action="thanks.html" method="get">
+  <form class="box" action="thanks.html" method="get">
     <label>
       Mobile phone number
       <input type="tel" name="mobile_number" required autocomplete="tel" placeholder="+1XXXXXXXXXX">
     </label>
 
-    <label class="check">
+    <label>
       <input type="checkbox" name="sms_consent" value="yes" required>
-      I agree to receive recurring informational text messages from inReach Field Assistant at the number I entered. Message frequency varies. Message and data rates may apply. Reply HELP for help, STOP to cancel.
+      I agree to receive recurring informational text messages from Michael Hamilton at the mobile number I entered. Message frequency varies. You may receive up to 30 messages per month. Message and data rates may apply. Reply HELP for help, STOP to opt out.
       <a href="../privacy/">Privacy Policy</a>
-      (mobile numbers are not shared with third parties or affiliates for marketing or promotional purposes) and
+      and
       <a href="../terms/">Terms and Conditions</a>.
+      We do not share, sell, or provide your mobile phone number or messaging consent data to third parties or affiliates for marketing or promotional purposes.
     </label>
 
-    <p class="fine">The consent checkbox is unchecked by default. You must check it yourself to opt in. Consent is not a condition of any purchase.</p>
+    <p class="fine">This checkbox is unchecked by default. You must check it yourself. Consent is not a condition of purchase.</p>
     <button type="submit">Agree and sign up for SMS</button>
   </form>
 
-  <p class="fine">You can also opt in by texting START, YES, or UNSTOP to the inReach Field Assistant 10DLC number.</p>
+  <h2>Keyword opt-in</h2>
+  <p>You may also opt in by texting START, YES, or UNSTOP to +1 (213) 774-0378. You will receive a confirmation SMS. Message frequency varies. You may receive up to 30 messages per month. Message and data rates may apply. Reply HELP for help, STOP to opt out.</p>
   <p><a href="../">Home</a></p>
 </body>
 </html>
