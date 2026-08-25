@@ -3,10 +3,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Optional SMS signup — Michael Hamilton</title>
+  <title>How to opt in — Michael Hamilton SMS</title>
   <style>
     body { font-family: system-ui, sans-serif; max-width: 40rem; margin: 3rem auto; padding: 0 1.25rem; line-height: 1.55; color: #1a1a1a; }
     h1 { font-size: 1.6rem; }
+    h2 { font-size: 1.15rem; margin-top: 1.75rem; }
     label { display: block; margin: 1rem 0; }
     input[type="tel"] { width: 100%; max-width: 22rem; padding: 0.5rem; font-size: 1rem; }
     input[type="checkbox"] { margin-right: 0.45rem; vertical-align: top; }
@@ -20,37 +21,37 @@
   </style>
 </head>
 <body>
-  <h1>Optional SMS signup</h1>
-  <p>You can use Michael Hamilton’s website and email support without receiving text messages. SMS is optional and is not required to use the service.</p>
+  <h1>How to opt in to SMS</h1>
+  <p>Michael Hamilton’s informational program is SMS-only. There is no account, purchase, app login, or non-SMS product. You do not have to complete this website to use email support or to read these pages.</p>
+  <p><strong>Primary opt-in:</strong> text <strong>START</strong>, <strong>YES</strong>, or <strong>UNSTOP</strong> to <strong>+1 (213) 774-0378</strong>. That inbound text is your consent. You will receive: “Michael Hamilton: You are opted in to recurring informational SMS. Msg frequency varies. Up to 30 msgs/mo. Msg &amp; data rates may apply. Reply HELP for help, STOP to opt out.”</p>
+  <p>Message frequency varies. You may receive up to 30 messages per month. Message and data rates may apply. Reply HELP for help, STOP to opt out.
+    <a href="../privacy/">Privacy Policy</a> ·
+    <a href="../terms/">Terms and Conditions</a>.
+    We do not share, sell, or provide your mobile phone number or messaging consent data to third parties or affiliates for marketing or promotional purposes.</p>
+
+  <h2>Optional web form</h2>
+  <p>The form below is optional. You may skip it and still read this site or email for help. SMS consent is not required to use the website.</p>
   <p><a class="skip" href="skip.html">Skip — continue without SMS</a></p>
 
   <form id="sms-form" class="box" action="thanks.html" method="get">
-    <p><strong>Optional.</strong> Only fill this out if you want informational texts about weather, trails, water, fire restrictions, road closures, and town hours. This is not marketing.</p>
-
     <label>
-      Mobile phone number (optional unless you opt in to SMS)
+      Mobile phone number (optional)
       <input id="mobile_number" type="tel" name="mobile_number" autocomplete="tel" placeholder="+1XXXXXXXXXX">
     </label>
-
     <label>
       <input id="sms_consent" type="checkbox" name="sms_consent" value="yes">
       <strong>(Optional)</strong> I agree to receive recurring informational text messages from Michael Hamilton at the mobile number I entered. Message frequency varies. You may receive up to 30 messages per month. Message and data rates may apply. Reply HELP for help, STOP to opt out.
       <a href="../privacy/">Privacy Policy</a>
       and
       <a href="../terms/">Terms and Conditions</a>.
-      We do not share, sell, or provide your mobile phone number or messaging consent data to third parties or affiliates for marketing or promotional purposes.
     </label>
-
-    <p class="fine">This checkbox is unchecked by default. You may leave it unchecked and still use the website and email support. Consent is not a condition of purchase or of using the service.</p>
+    <p class="fine">Unchecked by default. Not required. Consent is not a condition of purchase or of using the website.</p>
     <div class="actions">
       <button type="submit">Sign up for optional SMS</button>
       <a class="skip" href="skip.html">Skip — continue without SMS</a>
     </div>
   </form>
-
-  <h2>Keyword opt-in (also optional)</h2>
-  <p>You may also opt in by texting START, YES, or UNSTOP to +1 (213) 774-0378. You will receive a confirmation SMS. Message frequency varies. You may receive up to 30 messages per month. Message and data rates may apply. Reply HELP for help, STOP to opt out.</p>
-  <p><a href="../">Home — use the site without SMS</a></p>
+  <p><a href="../">Home</a></p>
   <script>
     document.getElementById('sms-form').addEventListener('submit', function (e) {
       var box = document.getElementById('sms_consent');
