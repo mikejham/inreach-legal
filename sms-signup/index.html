@@ -3,44 +3,69 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>SMS signup — Michael Hamilton</title>
+  <title>Optional SMS signup — Michael Hamilton</title>
   <style>
     body { font-family: system-ui, sans-serif; max-width: 40rem; margin: 3rem auto; padding: 0 1.25rem; line-height: 1.55; color: #1a1a1a; }
     h1 { font-size: 1.6rem; }
     label { display: block; margin: 1rem 0; }
     input[type="tel"] { width: 100%; max-width: 22rem; padding: 0.5rem; font-size: 1rem; }
     input[type="checkbox"] { margin-right: 0.45rem; vertical-align: top; }
-    button { background: #0b57d0; color: #fff; border: 0; padding: 0.65rem 1.1rem; font-size: 1rem; border-radius: 6px; cursor: pointer; }
+    button, .skip { font-size: 1rem; padding: 0.65rem 1.1rem; border-radius: 6px; cursor: pointer; display: inline-block; text-decoration: none; }
+    button[type="submit"] { background: #0b57d0; color: #fff; border: 0; }
+    .skip { background: #fff; color: #1a1a1a; border: 1px solid #888; margin-left: 0.5rem; }
     a { color: #0b57d0; }
     .fine { color: #333; font-size: 0.95rem; }
     .box { border: 1px solid #bbb; padding: 1rem; border-radius: 8px; background: #fafafa; }
+    .actions { margin-top: 1rem; }
   </style>
 </head>
 <body>
-  <h1>Sign up for SMS from Michael Hamilton</h1>
-  <p>Michael Hamilton sends recurring informational text messages about outdoor conditions (weather, trail conditions, water sources, fire restrictions, road closures, and town hours). This is not marketing.</p>
+  <h1>Optional SMS signup</h1>
+  <p>You can use Michael Hamilton’s website and email support without receiving text messages. SMS is optional and is not required to use the service.</p>
+  <p><a class="skip" href="skip.html">Skip — continue without SMS</a></p>
 
-  <form class="box" action="thanks.html" method="get">
+  <form id="sms-form" class="box" action="thanks.html" method="get">
+    <p><strong>Optional.</strong> Only fill this out if you want informational texts about weather, trails, water, fire restrictions, road closures, and town hours. This is not marketing.</p>
+
     <label>
-      Mobile phone number
-      <input type="tel" name="mobile_number" required autocomplete="tel" placeholder="+1XXXXXXXXXX">
+      Mobile phone number (optional unless you opt in to SMS)
+      <input id="mobile_number" type="tel" name="mobile_number" autocomplete="tel" placeholder="+1XXXXXXXXXX">
     </label>
 
     <label>
-      <input type="checkbox" name="sms_consent" value="yes" required>
-      I agree to receive recurring informational text messages from Michael Hamilton at the mobile number I entered. Message frequency varies. You may receive up to 30 messages per month. Message and data rates may apply. Reply HELP for help, STOP to opt out.
+      <input id="sms_consent" type="checkbox" name="sms_consent" value="yes">
+      <strong>(Optional)</strong> I agree to receive recurring informational text messages from Michael Hamilton at the mobile number I entered. Message frequency varies. You may receive up to 30 messages per month. Message and data rates may apply. Reply HELP for help, STOP to opt out.
       <a href="../privacy/">Privacy Policy</a>
       and
       <a href="../terms/">Terms and Conditions</a>.
       We do not share, sell, or provide your mobile phone number or messaging consent data to third parties or affiliates for marketing or promotional purposes.
     </label>
 
-    <p class="fine">This checkbox is unchecked by default. You must check it yourself. Consent is not a condition of purchase.</p>
-    <button type="submit">Agree and sign up for SMS</button>
+    <p class="fine">This checkbox is unchecked by default. You may leave it unchecked and still use the website and email support. Consent is not a condition of purchase or of using the service.</p>
+    <div class="actions">
+      <button type="submit">Sign up for optional SMS</button>
+      <a class="skip" href="skip.html">Skip — continue without SMS</a>
+    </div>
   </form>
 
-  <h2>Keyword opt-in</h2>
+  <h2>Keyword opt-in (also optional)</h2>
   <p>You may also opt in by texting START, YES, or UNSTOP to +1 (213) 774-0378. You will receive a confirmation SMS. Message frequency varies. You may receive up to 30 messages per month. Message and data rates may apply. Reply HELP for help, STOP to opt out.</p>
-  <p><a href="../">Home</a></p>
+  <p><a href="../">Home — use the site without SMS</a></p>
+  <script>
+    document.getElementById('sms-form').addEventListener('submit', function (e) {
+      var box = document.getElementById('sms_consent');
+      var phone = document.getElementById('mobile_number');
+      if (!box.checked) {
+        e.preventDefault();
+        window.location.href = 'skip.html';
+        return;
+      }
+      if (!phone.value.trim()) {
+        e.preventDefault();
+        phone.focus();
+        alert('Enter a mobile number only if you want SMS. Or choose Skip to continue without SMS.');
+      }
+    });
+  </script>
 </body>
 </html>
